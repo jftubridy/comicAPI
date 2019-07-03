@@ -9,14 +9,14 @@ $(document).ready(function() {
     let city = $('#location').val();
     $('#location').val("");
     $.ajax({
-      url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=462946d0a52b8ba2f2ec97b1a4ca72e7
+      url: `https://api.adviceslip.com/advice?callback=fortuneCookie
 `,
       type: 'GET',
       data: {
         format: 'json'
       },
       success: function(response) {
-        $('.showHumidity').text(`The humidity in ${city} is ${response.main.humidity}%`);
+        $('.showHumidity').text(`The humidity in ${city} is ${response.fortuneCookie.slip}`);
         $('.showTemp').text(`The temperature in Kelvins is ${response.main.temp}.`);
       },
       error: function() {

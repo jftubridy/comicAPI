@@ -1,28 +1,34 @@
-// import $ from 'jquery';
-// import 'bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import './styles.css';
-// import { CoolDate } from './coolDate.js';
+import $ from 'jquery';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
+
 
 $(document).ready(function() {
-  $('#weatherLocation').click(function() {
-    let city = $('#location').val();
-    $('#location').val("");
-    $.ajax({
-      url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=462946d0a52b8ba2f2ec97b1a4ca72e7
-`,
-      type: 'GET',
-      data: {
-        format: 'json'
-      },
-      success: function(response) {
-        $('.showHumidity').text(`The humidity in ${city} is ${response.main.humidity}%`);
-        $('.showTemp').text(`The temperature in Kelvins is ${response.main.temp}.`);
-      },
-      error: function() {
-        $('#errors').text("There was an error processing your request. Please try again.");
+  $('#comicButton').click(function() {
+    let userInput = $('#comicNumber').val();
+    $('#comicNumber').val("");
+
+      let request = new XMLHttpRequest();
+      const url = `https://CORS-anywhere.herokuapp.com/xkcd.com/${userInput}/info.0.json`;
+
+      request.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status === 200) {
+        const response = JSON.parse(this.responseText);
+        getElements(response);
+        }
       }
-    });
+
+      request.open("GET", url, true);
+      request.send();
+
+      const getElements = function(response) {
+      $('.showComic').html(`<img src="${response.img}">`);
+      // $('.showTemp').text(`The temperature in Kelvins is ${response.main.temp} degrees.`);
+
+
+
+
+    }
   });
 });
-//Vopnafjörður

@@ -6,13 +6,12 @@
   </head>
   <body>
     <div class="container">
-      <h1>Get Weather Conditions From Anywhere!</h1>
-      <label for="location">Enter a location:</label>
-      <input id="location" type="text">
-      <button class="btn-success" id="weatherLocation">Get Current Humidity!</button>
+      <h1>XKCD Comic API</h1>
+      <label for="comicNumber">Enter a number, get a comic!</label>
+      <input id="comicNumber" type="number">
+      <button class="btn-success" id="comicButton">Get your comic!</button>
       <div class="errors"></div>
-      <div class="showHumidity"></div>
-      <div class="showTemp"></div>
+      <div id="comicWindow" class="showComic"></div>
     </div>
   </body>
 </html>
