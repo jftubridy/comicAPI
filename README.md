@@ -1,10 +1,10 @@
-# Weekday Calculator
-### By Rochelle Roberts
+# ComicAPI
+### By Joseph Tubridy and Lisa Jensen
 
 ---
 
 ## Description
-* This program calculates the day for any given date.
+* This is a program to check the weather of a user designated location.
 
 
 ## Technologies Used
@@ -19,8 +19,8 @@
 * Clone repo, from the root directory, install dependencies.
 
 ```sh
-$ git clone https://github.com/rochellev/weekdayCalculator.git
-$ cd weekdayCalculator
+$ git clone https://github.com/jftubridy/comicAPI.git
+$ cd comicAPI
 $ npm install
 ```
 
